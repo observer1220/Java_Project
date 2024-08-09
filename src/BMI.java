@@ -1,7 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class Main {
+public class BMI {
     private static final DecimalFormat DF = new DecimalFormat("0.00");
 
     public static void main(String[] args) {

@@ -1,17 +1,26 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class ArithmeticTable extends JPanel {
+public class ArithmeticTable extends JPanel implements KeyListener, MouseListener {
     String type;
     int n;
 
     public ArithmeticTable() {
+        addKeyListener(this);
+        addMouseListener(this);
+
         type = JOptionPane.showInputDialog("您要一個加法表或乘法表(A OR M)?");
         n = Integer.parseInt(JOptionPane.showInputDialog("您希望的介面大小為?"));
     }
 
     @Override
     public void paintComponent(Graphics g) {
+        requestFocusInWindow();
+
         int w = getWidth(), h = getHeight();
         int x = 0, y = 0;
         int cellWidth = w / n, cellHeight = h / n;
@@ -52,5 +61,45 @@ public class ArithmeticTable extends JPanel {
         window.setSize(400, 400); // 設置GUI大小
         window.setContentPane(new ArithmeticTable());
         window.setVisible(true);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        System.out.println(e.getKeyCode());
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        System.out.println(e.getX() + e.getY());
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }

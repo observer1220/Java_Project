@@ -20,4 +20,12 @@ public class Circle {
     public double getRadius() {
         return this.radius;
     }
+
+    public void setRadius(double radius) {
+        if (radius < 0) {
+            throw new IllegalArgumentException("Radius cannot be negative.");
+        } else {
+            this.radius = radius;
+        }
+    }
 }

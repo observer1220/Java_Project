@@ -1,6 +1,8 @@
 package Shapes;
 
-public class Circle {
+import java.io.Serializable;
+
+public class Circle implements Serializable {
     private double radius;
     private static final double PI = 3.14;
 
